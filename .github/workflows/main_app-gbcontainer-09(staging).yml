@@ -31,10 +31,10 @@ jobs:
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./guestbook
           push: true
           tags: crmrg09.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_34F9BB1D9CA3426AA60F5CB47DDC2597 }}/guestbook:${{ github.sha }}
-          file: ./Dockerfile
+          file: ./guestbook/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
